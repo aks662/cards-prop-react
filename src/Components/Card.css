@@ -1,0 +1,256 @@
+/* Card.css */
+.card {
+  max-width: 360px;
+  width: 100%;
+  background: #ffffff;
+  border-radius: 32px;
+  box-shadow: 0 22px 46px -22px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(0, 0, 0, 0.035);
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.2, 0, 0, 1);
+  backdrop-filter: blur(0px);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 56px -24px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(0, 0, 0, 0.04);
+}
+
+/* Top colored section with circle image */
+.card-top {
+  position: relative;
+  height: 250px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: #fde6e0; /* fallback, will be overridden by inline style */
+  transition: background-color 0.2s ease;
+  overflow: hidden;
+}
+
+.card-top::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  -webkit-mask: radial-gradient(circle 220px at 50% -52px, transparent 0 220px, #000 222px);
+  mask: radial-gradient(circle 220px at 50% -52px, transparent 0 220px, #000 222px);
+}
+
+.circle-shape {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  background: transparent;
+  border-radius: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 42px;
+  box-shadow: none;
+  transition: transform 0.25s ease;
+}
+
+.card:hover .circle-shape {
+  transform: scale(1.02);
+}
+
+.drink-image {
+  max-width: 190px;
+  max-height: 190px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.28));
+}
+
+.card:hover .drink-image {
+  transform: scale(1.03);
+}
+
+/* Card body content */
+.card-body {
+  padding: 1.6rem 1.8rem 0.35rem;
+}
+
+.card-body h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: #1a1e2b;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.ml {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #9ca3af;
+  letter-spacing: normal;
+}
+
+.desc {
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: #6b7280;
+  margin: 0.7rem 0 1.2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Size buttons row */
+.size-row {
+  display: flex;
+  gap: 0.6rem;
+  margin: 0.8rem 0 1.25rem;
+  align-items: center;
+}
+
+.size-row::before {
+  content: 'Size:';
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #374151;
+  margin-right: 0.05rem;
+}
+
+.size-btn {
+  background: transparent;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 9px;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  color: #334155;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 0;
+  letter-spacing: 0;
+}
+
+.size-btn:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+  transform: translateY(-1px);
+}
+
+.size-btn.active {
+  background: #111827;
+  border-color: #111827;
+  color: white;
+  box-shadow: 0 8px 14px -10px rgba(0, 0, 0, 0.55);
+}
+
+/* Bottom row: price + order button */
+.bottom-row {
+  padding: 0.2rem 1.8rem 1.7rem;
+}
+
+.price-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.price {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.old-price {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #94a3b8;
+  text-decoration: line-through;
+  margin-left: 0.3rem;
+  letter-spacing: -0.2px;
+}
+
+.order-btn {
+  background-color: #000; /* fallback, will be overwritten by inline style */
+  border: none;
+  border-radius: 14px;
+  padding: 0.75rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  letter-spacing: 0;
+  color: white;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 18px 28px -18px rgba(0, 0, 0, 0.6);
+  font-family: inherit;
+  min-width: 128px;
+}
+
+.order-btn:hover {
+  filter: brightness(0.92);
+  transform: translateY(1px);
+  box-shadow: 0 14px 24px -18px rgba(0, 0, 0, 0.6);
+}
+
+.order-btn:active {
+  transform: translateY(2px);
+}
+
+/* Price & old-price inline group for clean alignment */
+.price-box .price,
+.price-box .old-price {
+  display: inline-block;
+}
+
+/* Additional micro spacing */
+.card-body .size-row:last-child {
+  margin-bottom: 0.2rem;
+}
+
+/* Responsive touch */
+@media (max-width: 420px) {
+  .card-body h2 {
+    font-size: 1.15rem;
+  }
+  
+  .price {
+    font-size: 1.5rem;
+  }
+  
+  .size-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 0.82rem;
+  }
+  
+  .order-btn {
+    padding: 0.7rem 1rem;
+    font-size: 0.9rem;
+    min-width: 115px;
+  }
+  
+  .circle-shape {
+    padding-top: 36px;
+  }
+  
+  .drink-image {
+    max-width: 170px;
+    max-height: 170px;
+  }
+}
