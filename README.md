@@ -2,7 +2,7 @@
 
 A modern, responsive product card component built with React. Perfect for e‑commerce menus, beverage showcases, or any product listing that needs size selection, pricing (with original price strikethrough), and dynamic theming.
 
-![Preview](image.png)
+
 
 ![alt text](image.png)
 ---
